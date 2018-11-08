@@ -1,0 +1,56 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    rootProject.ext {
+        minSdkVersion = 15
+        compileSdkVersion = 25
+        buildToolsVersion = "25.0.0"
+        targetSdkVersion = 25
+        MVN_RL_URL = 'http://nexus.babytree-inc.com:8081/nexus/content/repositories/beijing-maven-release'
+        MVN_SN_URL = 'http://nexus.babytree-inc.com:8081/nexus/content/repositories/beijing-maven-snapshot'
+
+    }
+
+    repositories {
+        jcenter()
+        mavenCentral()
+
+        maven {
+            url 'http://nexus.babytree-inc.com:8081/nexus/content/repositories/beijing-maven-release'
+        }
+        maven {
+            url 'http://nexus.babytree-inc.com:8081/nexus/content/repositories/beijing-maven-snapshot'
+        }
+
+
+        maven {
+            url 'https://maven.google.com/'
+            name 'Google'
+        }
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.1.1'
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+        mavenCentral()
+
+        maven {
+            url 'http://nexus.babytree-inc.com:8081/nexus/content/repositories/beijing-maven-release'
+        }
+        maven {
+            url 'http://nexus.babytree-inc.com:8081/nexus/content/repositories/beijing-maven-snapshot'
+        }
+
+        maven {
+            url 'https://maven.google.com/'
+            name 'Google'
+        }
+    }
+}

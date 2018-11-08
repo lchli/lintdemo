@@ -1,0 +1,28 @@
+apply plugin: 'java'
+
+dependencies {
+    def LINT_VERSION="26.1.1"
+    compile "com.android.tools.lint:lint-api:$LINT_VERSION"
+   compile "com.android.tools.lint:lint-checks:$LINT_VERSION"
+}
+
+jar {
+    manifest {
+        attributes 'Lint-Registry': 'googleio.demo.MyIssueRegistry'
+    }
+}
+
+configurations {
+    lintChecks
+}
+
+dependencies {
+    lintChecks files(jar)
+}
+
+
+tasks.withType(JavaCompile) {
+
+    options.encoding = 'UTF-8'
+
+}
