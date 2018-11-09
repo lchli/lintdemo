@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }).start();
 
-        System.out.println("1");
+        System.err.println("1");
         System.out.println(1);///
         System.out.println(100L);///
         System.out.println(100.0);///

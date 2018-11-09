@@ -18,8 +18,8 @@ public class NewThreadDetector extends Detector implements Detector.UastScanner 
 
     public static final Issue ISSUE = Issue.create(
             "NewThread",
-            "avoid Thread",
-            "avoid new Thread()，use AsyncTask instead.",
+            "",
+            "为了执行效率，避免使用new Thread，请使用线程池替代。",
             Category.CORRECTNESS, 6, Severity.WARNING,
             new Implementation(NewThreadDetector.class, Scope.JAVA_FILE_SCOPE));
 
@@ -31,9 +31,8 @@ public class NewThreadDetector extends Detector implements Detector.UastScanner 
     @Override
     public void visitConstructor(JavaContext context, UCallExpression node, PsiMethod constructor) {
         super.visitConstructor(context, node, constructor);
-        context.report(ISSUE, node, context.getLocation(node), "avoi new Thread()===");
+        context.report(ISSUE, node, context.getLocation(node), "避免使用new Thread.");
     }
-
 
 
 }

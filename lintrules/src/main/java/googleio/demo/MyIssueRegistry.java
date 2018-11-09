@@ -16,7 +16,8 @@ public class MyIssueRegistry extends IssueRegistry {
                 MyDetector.ISSUE,
                 NewThreadDetector.ISSUE,
                 MagicNumberDetector.ISSUE,
-                WrongConstantNameDetector.ISSUE_CONSTANT
+                WrongConstantNameDetector.ISSUE_CONSTANT,
+                SystemPrintDetector.ISSUE
         );
     }
 
